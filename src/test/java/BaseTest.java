@@ -15,12 +15,13 @@ public class BaseTest {
 
     WebDriver driver;
     String BASE_URL = "https://www.phptravels.net/login";
+    String LOOGED_IN_URL = "https://www.phptravels.net/account/dashboard";
     LoginPage loginPage;
     DashboardPage dashboardPage;
 
     @Before
     public void setup(){
-        System.setProperty("webdriver.chrome.driver", "C:\\Selenium\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\Selenium\\chromedriver.exe"); // relatywna ścieżka
         driver = new ChromeDriver();
         loginPage = PageFactory.initElements(driver, LoginPage.class);
         dashboardPage = PageFactory.initElements(driver, DashboardPage.class);
@@ -30,7 +31,7 @@ public class BaseTest {
 
     @After
     public void tearDown(){
-//        driver.quit();
+        driver.quit();
     }
 
 

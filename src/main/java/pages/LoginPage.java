@@ -12,12 +12,7 @@ public class LoginPage{
     @FindBy(css = ".form-group input[name='password']")
     WebElement passwordInput;
 
-//    @FindBy(className = ".btn.btn-default.btn-lg.btn-block.effect.ladda-button.waves-effect")
-//    public
-//    WebElement loginButton;
-
-    @FindBy(className = ".btn-lg")
-    public
+    @FindBy(css = ".container button[type='submit']")
     WebElement loginButton;
 
     public void enterEmail(String text){
@@ -30,9 +25,5 @@ public class LoginPage{
 
     public void clickLoginButton(){
         loginButton.click ();
-    }
-
-    public void enterPasswordAndLogin(String text){
-        passwordInput.sendKeys(text + Keys.ENTER);
     }
 }
